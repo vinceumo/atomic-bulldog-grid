@@ -1,0 +1,18 @@
+$use-css-var: true;
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// Use CSS variable Flag
+//
+// `$use-css-var` 
+// 
+// By default Atomic Bulldog use CSS variables. You can compile the real values by changing this flag to false. It is not recommended to do so as it will break some theming options.
+// Moreover postCSS can be used to compile CSS variables.
+//
+// <p class="ciu_embed" data-feature="css-variables" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false">
+//  <a href="http://caniuse.com/#feat=css-variables">Can I Use css-variables?</a> Data on support for the css-variables feature across the major browsers from caniuse.com.
+// </p>
+//
+// Styleguide Settings.useCssVar

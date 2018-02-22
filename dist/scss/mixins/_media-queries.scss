@@ -1,0 +1,70 @@
+/*Min and Max mixins*/
+@mixin min($bp, $max: "null", $device: "screen") {
+  @if $max == "null" {
+    @media only #{$device} and (min-width: #{$bp}) {
+      @content;
+    }
+  } @else {
+    @media only #{$device} and (min-width: #{$bp}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+}
+
+@mixin max($bp, $min: "null", $device: "screen") {
+  @if $min == "null" {
+    @media only #{$device} and (max-width: #{$bp}) {
+      @content;
+    }
+  } @else {
+    @media only #{$device} and (max-width: #{$bp}) and (min-width: #{$min}) {
+      @content;
+    }
+  }
+}
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// min(#{bp(your bp)}){}
+//
+// `@include min($bp, $max: "null", $device: "screen"){}`
+//
+// Parameters:
+// * `$bp` - Breakpoints are defines in the map variables `$breakpoints`, breakpoints can be called with the function `bp()`. As we call a function
+// inside a mixin we will need to use sass interpolation, `#{bp()}`. This will return a value in em.
+// * `$max` - Optional max value, using $breakpoints map
+// * `$device` - Default screen
+//
+// Usage:
+// * `h2{@include min(#{bp(sm)}){font-size: font-size(2);}}`
+// 
+// Output:
+// * `@media only screen and (min-width: 36em) {h2{font-size: 2.5rem;}`
+//
+// Styleguide Mixins.min
+
+// ------------------------------
+/////////////////////////////////
+// ------------------------------
+
+// max(#{bp(your bp)}){}
+//
+// `@include max($bp, $min: "null", $device: "screen"){}`
+//
+// /!\ Atomic Bulldog is mobile first, it is not recommended to use max media queries
+//
+// Parameters:
+// * `$bp` - Breakpoints are defines in the map variables `$breakpoints`, breakpoints can be called with the function `bp()`. As we call a function
+// inside a mixin we will need to use sass interpolation, `#{bp()}`. This will return a value in em.
+// * `$min` - Optional min value, using $breakpoints map
+// * `$device` - Default screen
+//
+// Usage:
+// * `h2{@include max(#{bp(sm)}){font-size: font-size(2);}}`
+// 
+// Output:
+// * `@media only screen and (max-width: 36em) {h2{font-size: 2.5rem;}`
+//
+// Styleguide Mixins.max

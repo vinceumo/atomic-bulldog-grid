@@ -1,0 +1,22 @@
+$root-default: "
+    :root,
+    .theme-default,
+    .is-theme-default
+";
+
+$root-invert-theme: "
+    :root .theme-invert,
+    :root .is-theme-invert
+";
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// Theme classes
+//
+// CSS Variables and theme classes are set in the variable files using this Sass variables:
+// * `$root-default` => :root, .theme-default, .is-theme-default
+// * `$root-invert-theme` => :root .theme-invert, :root .is-theme-invert
+//
+// Styleguide Variables.themeClasses

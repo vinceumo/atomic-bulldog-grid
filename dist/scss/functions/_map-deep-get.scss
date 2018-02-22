@@ -1,0 +1,27 @@
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+      $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// map-deep-get($map, $keys...)
+//
+// The map-deep-get function allows to get and set values from the nested tree.
+// This function is used to set the media queries with em value.
+//
+// Source:
+// - https://css-tricks.com/snippets/sass/deep-getset-maps/
+//
+// Parameters:
+// * `$map` - targeted map
+// * `$keys` - Keys to target
+//
+// Usage:
+// * `map-deep-get($aspect-ratios, 1x1, width)`
+//
+// Styleguide Functions.mapdeepget

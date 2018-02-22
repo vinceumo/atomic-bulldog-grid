@@ -1,0 +1,18 @@
+// Sass variables
+//
+// >The most straightforward way to use SassScript is to use variables. Variables begin with dollar signs, and are set like CSS properties
+//
+// http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_
+//
+// > Maps represent an association between keys and values, where keys are used to look up values.
+// They make it easy to collect values into named groups and access those groups dynamically.
+// They have no direct parallel in CSS, although they're syntactically similar to media query expressions:
+//
+// http://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+//
+// Sass variables helps to define patterns in the project. They are the core of this project.
+// Most of this variables are define in maps and can be call using a function link to this map.
+//
+// weight: 6
+//
+// Styleguide Variables

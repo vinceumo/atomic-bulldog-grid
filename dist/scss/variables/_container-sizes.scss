@@ -1,0 +1,62 @@
+// ------------------------------
+// Sass Variables
+// ------------------------------
+$container-size-prefix: --container-size-;
+$container-sizes: (
+  sm: map-get($breakpoints, sm) - 30px,
+  md: map-get($breakpoints, md) - 40px,
+  lg: map-get($breakpoints, lg) - 50px,
+  xl: map-get($breakpoints, xl) - 400px
+);
+
+// ------------------------------
+// Set container function
+// ------------------------------
+@function container($container-size, $true-val:false) {
+  @if $use-css-var == true {
+    @if $true-val == true {
+      @return map-get($container-sizes, $container-size); //True Val
+    } @else {
+      @return var(#{$container-size-prefix}#{$container-size}); //CSS Var
+    }
+  } @else {
+    @return map-get($container-sizes, $container-size); //Disabled CSS Var
+  }
+}
+
+// ------------------------------
+// Set root variables
+// ------------------------------
+@if $use-css-var == true {
+  #{$root-default} {
+    @each $name, $container-size in $container-sizes {
+      #{$container-size-prefix}#{$name}: $container-size;
+    }
+  }
+}
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// Container Sizes
+//
+// Container sizes are in the map `$container-sizes`
+//
+// --------
+// * `sm`
+// * `md`
+// * `lg`
+// * `xl`
+// --------
+//
+// Container Sizes can be called in the sass project using the function:
+//
+// `container($container-size, $true-val:false)`.
+//
+// Function examples to call the map:
+// * `container(md);` => `var(--container-size-sm);` If $use-css-var = true
+// * `container(md);` => `720px;` If $use-css-var = false
+// * `container(md, true)` => `720px;`
+//
+// Styleguide Variables.container

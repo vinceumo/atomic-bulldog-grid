@@ -1,0 +1,75 @@
+// ------------------------------
+// Sass Variables
+// ------------------------------
+$spacer-reference: 1rem;
+$spacer-prefix: --spacer-;
+$spacers: (
+  0: 0,
+  1: ($spacer-reference * 0.25),
+  2: ($spacer-reference * 0.5),
+  3: $spacer-reference,
+  4: ($spacer-reference * 1.25),
+  5: ($spacer-reference * 1.5),
+  6: ($spacer-reference * 3),
+  7: ($spacer-reference * 6),
+  8: ($spacer-reference * 9),
+  9: ($spacer-reference * 12)
+);
+
+// ------------------------------
+// Set spacer function
+// ------------------------------
+@function spacer($spacer, $true-val:false) {
+  @if $use-css-var == true {
+    @if $true-val == true {
+      @return map-get($spacers, $spacer); //True Val
+    } @else {
+      @return var(#{$spacer-prefix}#{$spacer}); //CSS Var
+    }
+  } @else {
+    @return map-get($spacers, $spacer); //Disabled CSS Var
+  }
+}
+
+// ------------------------------
+// Set root variables
+// ------------------------------
+@if $use-css-var == true {
+  #{$root-default} {
+    @each $name, $spacer in $spacers {
+      #{$spacer-prefix}#{$name}: $spacer;
+    }
+  }
+}
+
+// ------------------------------
+//KSS Documentation
+// ------------------------------
+
+// Spacers
+//
+// Spacers is use to for padding and margin grid-gap in the project. The base value is set with $spacer-reference (1rem)
+//
+// ---------------
+// * `0`: 0,
+// * `1`: ($spacer-reference * 0.25),
+// * `2`: ($spacer-reference * 0.5),
+// * `3`: $spacer-reference,
+// * `4`: ($spacer-reference * 1.25),
+// * `5`: ($spacer-reference * 1.5),
+// * `6`: ($spacer-reference * 3),
+// * `7`: ($spacer-reference * 6),
+// * `8`: ($spacer-reference * 9),
+// * `9`: ($spacer-reference * 12)
+// ---------------
+//
+// spacer sizes can be called in the sass project using the functions:
+//
+// `spacer($spacer, $true-val:false)` which will output by default the CSS variable
+//
+// Usage of grid-item-size():
+// * `spacer(4)` => `var(--spacer-4)` If $use-css-var = true
+// * `spacer(4)` => `1.25rem` If $use-css-var = false
+// * `spacer(4, true)` => `1.25rem`
+//
+// Styleguide Variables.Spacers
