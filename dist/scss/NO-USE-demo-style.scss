@@ -24,18 +24,35 @@ span.highlight {
   background-color: rgba(191, 233, 255, 0.1);
 }
 
+span.alert{
+  background-color: rgba(236, 110, 173, 0.58);
+}
+
 header {
   color: #ffffff;
   text-align: center;
   margin-top: 8rem;
   margin-bottom: 8rem;
+
+  & > .grid{
+    margin-top: 3rem;
+  }
+
+  .sub-example{
+    .example--item{
+      background: rgba(255, 255, 255, 0.6);
+      color: rgb(44, 48, 58);
+    }
+  }
 }
 
-.grid > div {
+.example--item {
   background: linear-gradient(45deg, rgb(52, 148, 230), rgb(236, 110, 173));
   padding: 1rem; 
   border-radius: 5px;
   text-align: center;
+  width: 100%;
+  height: 100%;
 
   p {
     font-size: 1.2rem;

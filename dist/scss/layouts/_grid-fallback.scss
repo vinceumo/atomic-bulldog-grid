@@ -1,4 +1,9 @@
 /* Progressive Enhancement for browsers not supporting grid except IE */
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
 @supports not (display: grid) {
   @supports (display: flex) {
     .grid {
