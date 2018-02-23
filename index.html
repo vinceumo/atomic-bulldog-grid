@@ -8,20 +8,25 @@
     <title>Atomic Bulldog Grid</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/themes/prism-okaidia.min.css">
     <link rel="stylesheet" type="text/css" href="static/css/atomic-bulldog-grid.css">
+    <link rel="stylesheet" type="text/css" href="static/css/atomic-bulldog-grid-fallback.css">
     <link rel="stylesheet" type="text/css" href="static/css/NO-USE-demo-style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/prism.min.js"></script>
-<body>
-    <div class="page-container">
-        <div class="container">
-            <header>
-                <h1>Atomic Bulldog Grid</h1>
-                <p>CSS (SCSS) Grid base on CSS grid layout with @supports fallback to flexbox</p>
-            </header>
 
-            <div class="example">   
-                <h2><code>.has-col-{breakpoint}{number of columns}</code> class</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto dolore totam consectetur tenetur beatae illo, sint amet temporibus perspiciatis voluptatem facilis aliquam mollitia laborum ipsam quis voluptas dolores tempora reiciendis!</p>
-                <div class="grid has-grid-gap-4 has-cols-1 has-cols-xs-2 has-cols-sm-3 has-cols-md-5 has-cols-lg-7">
+    <body>
+        <div class="page-container">
+            <div class="container">
+                <header>
+                    <h1>Atomic Bulldog Grid</h1>
+                    <p>CSS (SCSS) Grid base on CSS grid layout with @supports fallback to flexbox</p>
+                </header>
+
+                <div class="example">
+                    <h2>
+                        <code>.grid</code> class</h2>
+                    <p>By default
+                        <code>.grid</code> will have the maximum of columns set in
+                        <span class="highlight">scss/variables/_grid.scss => $grid-columns</span>. By default the grid have 12 columns</p>
+                    <div class="grid">
                         <div>
                             <p>1</p>
                         </div>
@@ -66,7 +71,7 @@
                         </div>
                     </div>
                     <pre><code class="language-markup"><script type="prism-html-markup">
-<div class="grid has-grid-gap-4 has-cols-1 has-cols-xs-2 has-cols-sm-3 has-cols-md-5 has-cols-lg-7">
+<div class="grid">
     <div>
         <p>1</p>
     </div>
@@ -79,15 +84,24 @@
     <!-- etc -->
 </div>
                 </script></code></pre>
-            </div>
+                </div>
 
 
 
 
-            <div class="example">   
-                <h2><code>.has-col-{breakpoint}{number of columns}</code> class</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto dolore totam consectetur tenetur beatae illo, sint amet temporibus perspiciatis voluptatem facilis aliquam mollitia laborum ipsam quis voluptas dolores tempora reiciendis!</p>
-                <div class="grid has-grid-gap-4 has-cols-1 has-cols-xs-2 has-cols-sm-3 has-cols-md-5 has-cols-lg-7">
+                <div class="example">
+                    <h2>
+                        <code>.has-cols-{breakpoint}-{number of columns}</code> class</h2>
+                    <p>The number of columns of the grid can be change using the class
+                        <code>.has-cols-{breakpoint}-{number of columns}</code>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>{breakpoint}</strong>: optional breakpoint (See breakpoints) to change the number of columns from a breakpoint</li>
+                        <li>
+                            <strong>{number of columns}</strong>: From 0 to 12($grid-columns)</li>
+                    </ul>
+                    <div class="grid has-cols-1 has-cols-xs-2 has-cols-sm-3 has-cols-md-5 has-cols-lg-7">
                         <div>
                             <p>1</p>
                         </div>
@@ -132,7 +146,7 @@
                         </div>
                     </div>
                     <pre><code class="language-markup"><script type="prism-html-markup">
-<div class="grid has-grid-gap-4 has-cols-1 has-cols-xs-2 has-cols-sm-3 has-cols-md-5 has-cols-lg-7">
+<div class="grid has-cols-1 has-cols-xs-2 has-cols-sm-3 has-cols-md-5 has-cols-lg-7">
     <div>
         <p>1</p>
     </div>
@@ -144,13 +158,122 @@
     </div>
     <!-- etc -->
 </div>
-                </script></code></pre>
+                    </script></code></pre>
+                    <h3><code>.has-cols-1</code></h3>
+                    <div class="grid has-cols-1">
+                        <div>
+                            <p>1</p>
+                        </div>
+                    </div>
+
+                    <h3><code>.has-cols-2</code></h3>
+                    <div class="grid has-cols-2">
+                        <div>
+                            <p>1</p>
+                        </div>
+                        <div>
+                            <p>2</p>
+                        </div>
+                    </div>
+
+                    <h3><code>.has-cols-3</code></h3>
+                    <div class="grid has-cols-3">
+                        <div>
+                            <p>1</p>
+                        </div>
+                        <div>
+                            <p>2</p>
+                        </div>
+                        <div>
+                            <p>3</p>
+                        </div>
+                    </div>
+
+                    <h3><code>.has-cols-4</code></h3>
+                    <div class="grid has-cols-4">
+                        <div>
+                            <p>1</p>
+                        </div>
+                        <div>
+                            <p>2</p>
+                        </div>
+                        <div>
+                            <p>3</p>
+                        </div>
+                        <div>
+                            <p>4</p>
+                        </div>
+                    </div>
+
+                    <h3><code>.has-cols-5</code></h3>
+                    <div class="grid has-cols-5">
+                        <div>
+                            <p>1</p>
+                        </div>
+                        <div>
+                            <p>2</p>
+                        </div>
+                        <div>
+                            <p>3</p>
+                        </div>
+                        <div>
+                            <p>4</p>
+                        </div>
+                        <div>
+                            <p>5</p>
+                        </div>
+                    </div>
+
+                    <h3><code>.has-cols-6</code></h3>
+                    <div class="grid has-cols-6">
+                        <div>
+                            <p>1</p>
+                        </div>
+                        <div>
+                            <p>2</p>
+                        </div>
+                        <div>
+                            <p>3</p>
+                        </div>
+                        <div>
+                            <p>4</p>
+                        </div>
+                        <div>
+                            <p>5</p>
+                        </div>
+
+                        <div>
+                            <p>6</p>
+                        </div>
+                    </div>
+
+                    <h3><code>.has-cols-7</code></h3>
+                    <div class="grid has-cols-7">
+                        <div>
+                            <p>1</p>
+                        </div>
+                        <div>
+                            <p>2</p>
+                        </div>
+                        <div>
+                            <p>3</p>
+                        </div>
+                        <div>
+                            <p>4</p>
+                        </div>
+                        <div>
+                            <p>5</p>
+                        </div>
+                        <div>
+                            <p>6</p>
+                        </div>
+                        <div>
+                            <p>7</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
+
 </html>
-
-
-
-
