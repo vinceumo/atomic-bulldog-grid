@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atomic Bulldog Grid</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/atomic-bulldog-grid.css">
+    <link rel="stylesheet" type="text/css" href="static/css/atomic-bulldog-grid-fallback.css">
+    <link rel="stylesheet" type="text/css" href="static/css/NO-USE-demo-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/prism.min.js"></script>
+
+    <body>
+        <div class="page-container">
+            <div class="container">
+                <header>
+                    <h1>Atomic Bulldog Grid</h1>
+                    <p>CSS (SCSS) grid, base on CSS grid layout with @supports fallback to flexbox (partial support)</p>
+                    <a href="https://github.com/vinceumo/atomic-bulldog-grid">Get this project in Github</a>
+
+                    <div class="grid has-grid-gap-2 has-cols-4">
+                        <div class="has-col-all">
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </div>
+                        <div class="has-col-all has-col-md-1">
+                            <div class="example--item is-sticky">
+                                <p>2</p>
+                            </div>
+                        </div>
+                        <div class="has-col-all has-col-md-3">
+                            <div class="example--item">
+                                <p>3</p>
+                                <div class="grid has-cols-2 has-cols-md-3 has-cols-xl-4 has-grid-gap-2 is-dense sub-example">
+                                    <div class="has-row-md-2 has-row-xl-1 has-col-xl-2">
+                                        <div class="example--item">
+                                            <p>1</p>
+                                        </div>
+                                    </div>
+                                    <div class="has-row-xl-2">
+                                        <div class="example--item">
+                                            <p>2</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="example--item">
+                                            <p>3</p>
+                                        </div>
+                                    </div>
+                                    <div class="has-col-md-2 has-col-xl-1">
+                                        <div class="example--item">
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                    <div class="has-col-xl-2 has-row-xl-2">
+                                        <div class="example--item">
+                                            <p>5</p>
+                                        </div>
+                                    </div>
+                                    <div class="has-row-md-2 has-row-xl-1 has-col-xl-3">
+                                        <div class="example--item">
+                                            <p>6</p>
+                                        </div>
+                                    </div>
+                                    <div class="has-row-xl-2">
+                                        <div class="example--item">
+                                            <p>7</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="example--item">
+                                            <p>8</p>
+                                        </div>
+                                    </div>
+                                    <div class="has-col-md-2 has-col-xl-1 has-row-xl-2">
+                                        <div class="example--item">
+                                            <p>9</p>
+                                        </div>
+                                    </div>
+                                    <div class="has-row-xl-2">
+                                        <div class="example--item">
+                                            <p>10</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="has-col-all">
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="example">
+                    <h2>Table of content</h2>
+                    <ul>
+                        <li><a href="#grid-class">grid class</a></li>
+                        <li><a href="#has-cols-class">has-cols-{breakpoint}-{number of columns} class</a></li>
+                        <li><a href="#has-grid-gap-class">has-grid-gap-{breakpoint}-{spacer} class</a></li>
+                        <li><a href="#has-col-class">has-col-{breakpoint}-{number of columns} class</a></li>
+                        <li><a href="#has-row-class">has-row-{breakpoint}-{number of rows} class</a></li>
+                        <li><a href="#is-dense-class">is-dense class</a></li>
+                        <li><a href="#container-class">container class</a></li>
+                        <li><a href="#configure-your-grid-with-scss">configure your grid with SCSS</a></li>
+                    </ul>
+                </div>
+
+                <div class="example">
+                    <h2 id="grid-class">
+                        <code>.grid</code> class</h2>
+                    <p>By default
+                        <code>.grid</code> will have the maximum of columns set in
+                        <span class="highlight">scss/variables/_grid.scss => $grid-columns</span>. By default the grid have 12 columns</p>
+                    <div class="grid">
+                        <div>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>5</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>6</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>7</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>8</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>9</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>11</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>12</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>13</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>14</p>
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code class="language-markup"><script type="prism-html-markup">
+<div class="grid">
+    <div>
+        <div class="example--item">
+            <p>1</p>
+        </div>
+    </div>
+    <div>
+        <div class="example--item">
+            <p>2</p>
+        </div>
+    </div>
+    <div>
+        <div class="example--item">
+            <p>3</p>
+        </div>
+    </div>
+    <!-- etc. -->
+</div>
+                </script></code></pre>
+                </div>
+
+
+
+
+                <div class="example">
+                    <h2 id="has-cols-class">
+                        <code>.has-cols-{breakpoint}-{number of columns}</code> class</h2>
+                    <p>The number of columns of the grid can be changed using the class
+                        <code>.has-cols-{breakpoint}-{number of columns}</code>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>{breakpoint}</strong>: optional breakpoint (See breakpoints) to change the number of columns
+                            from a breakpoint</li>
+                        <li>
+                            <strong>{number of columns}</strong>: From 0 to 12($grid-columns)</li>
+                    </ul>
+                    <div class="grid has-cols-1 has-cols-xs-2 has-cols-sm-3 has-cols-md-5 has-cols-lg-7">
+                        <div>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>5</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>6</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>7</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>8</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>9</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>10</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>11</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>12</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>13</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="example--item">
+                                <p>14</p>
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code class="language-markup"><script type="prism-html-markup">
+<div class="grid has-cols-1 has-cols-xs-2 has-cols-sm-3 has-cols-md-5 has-cols-lg-7">
+    <div>
+        <div class="example--item">
+            <p>1</p>
+        </div>
+    </div>
+    <div>
+        <div class="example--item">
+            <p>2</p>
+        </div>
+    </div>
+    <div>
+        <div class="example--item">
+            <p>3</p>
+        </div>
+    </div>
+    <!-- etc. -->
+</div>
+                    </script></code></pre>
+                    <h3>
+                        <code>.has-cols-1</code>
+                    </h3>
+                    <div class="grid has-cols-1">
+                        <div>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>
+                        <code>.has-cols-2</code>
+                    </h3>
+                    <div class="grid has-cols-2">
+                        <did>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </did>
+                    </div>
+
+                    <h3>
+                        <code>.has-cols-3</code>
+                    </h3>
+                    <div class="grid has-cols-3">
+                        <did>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </did>
+                    </div>
+
+                    <h3>
+                        <code>.has-cols-4</code>
+                    </h3>
+                    <div class="grid has-cols-4">
+                        <did>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </did>
+                    </div>
+
+                    <h3>
+                        <code>.has-cols-5</code>
+                    </h3>
+                    <div class="grid has-cols-5">
+                        <did>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>5</p>
+                            </div>
+                        </did>
+                    </div>
+
+                    <h3>
+                        <code>.has-cols-6</code>
+                    </h3>
+                    <div class="grid has-cols-6">
+                        <did>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>5</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>6</p>
+                            </div>
+                        </did>
+                    </div>
+
+                    <h3>
+                        <code>.has-cols-7</code>
+                    </h3>
+                    <div class="grid has-cols-7">
+                        <did>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>5</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>6</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>7</p>
+                            </div>
+                        </did>
+                    </div>
+
+                    <p>etc. up to $grid-columns (12)</p>
+                </div>
+
+
+                <div class="example">
+                    <h2 id="has-grid-gap-class">
+                        <code>.has-grid-gap-{breakpoint}-{spacer}</code> class</h2>
+                    <p>The spacing between grid items can be changed using the class
+                        <code>.has-cols-{breakpoint}-{number of columns}</code>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>{breakpoint}</strong>: optional breakpoint (See breakpoints) to change spacing from a breakpoint</li>
+                        <li>
+                            <strong>{spacer}</strong>: From 0 to 9 they can be change in
+                            <span class="highlight">scss/variables/_spacers.scss => $spacers</span>
+                        </li>
+                    </ul>
+                    <div class="grid has-grid-gap-1 has-grid-gap-sm-5 has-grid-gap-md-2 has-grid-gap-lg-9 has-grid-gap-xl-3 has-cols-5">
+                        <did>
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>5</p>
+                            </div>
+                        </did>
+                    </div>
+                    <pre><code class="language-markup"><script type="prism-html-markup">
+<div class="grid  has-grid-gap-1 has-grid-gap-sm-5 has-grid-gap-md-2 has-grid-gap-lg-9 has-grid-gap-xl-3 has-cols-5">
+    <did>
+        <div class="example--item">
+            <p>1</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>2</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>3</p>
+        </div>
+    </did>
+    <!-- etc. -->
+</div>
+                </script></code></pre>
+
+                    <div class="grid has-cols-1 has-cols-md-2 has-grid-gap-5">
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-0</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-0">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-1</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-1">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-2</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-2">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-3</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-3">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-4</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-4">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-5</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-5">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-6</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-6">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-7</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-7">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-8</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-8">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+
+                        <div class="sub-example">
+                            <h3>
+                                <code>.has-grid-gap-9</code>
+                            </h3>
+                            <div class="grid has-cols-3 has-grid-gap-9">
+                                <did>
+                                    <div class="example--item">
+                                        <p>1</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>2</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>3</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>4</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>5</p>
+                                    </div>
+                                </did>
+                                <did>
+                                    <div class="example--item">
+                                        <p>6</p>
+                                    </div>
+                                </did>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h2 id="has-col-class">
+                        <code>.has-col-{breakpoint}-{number of columns}</code> class
+                        <span class="alert">/!\ No fallback</span>
+                    </h2>
+                    <p>The number of columns of a grid item can be changed using the class
+                        <code>.has-col-{breakpoint}-{number of columns}</code>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>{breakpoint}</strong>: optional breakpoint (See breakpoints) to change the number of columns
+                            of the item from a breakpoint</li>
+                        <li>
+                            <strong>{number of columns}</strong>: From 0 to 12($grid-columns) the word all can be used, the item
+                            will be full width in this case</li>
+                    </ul>
+
+                    <div class="grid  has-grid-gap-2  has-cols-5">
+                        <did class="has-col-2 has-col-md-3 has-col-lg-all">
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </did>
+                        <did class="has-col-2 has-col-md-1 has-col-lg-2">
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </did>
+                        <did class="has-col-xl-2">
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </did>
+                        <did class="has-col-md-2 has-col-lg-4">
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </did>
+                        <did class="has-col-sm-all has-col-lg-2">
+                            <div class="example--item">
+                                <p>5</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>6</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>7</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>8</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>9</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>10</p>
+                            </div>
+                        </did>
+                    </div>
+
+                    <pre><code class="language-markup"><script type="prism-html-markup">
+<div class="grid  has-grid-gap-2  has-cols-5">
+    <did class="has-col-2 has-col-md-3 has-col-lg-all">
+        <div class="example--item">
+            <p>1</p>
+        </div>
+    </did>
+    <did class="has-col-2 has-col-md-1 has-col-lg-2">
+        <div class="example--item">
+            <p>2</p>
+        </div>
+    </did>
+    <did class="has-col-xl-2">
+        <div class="example--item">
+            <p>3</p>
+        </div>
+    </did>
+    <did class="has-col-md-2 has-col-lg-4">
+        <div class="example--item">
+            <p>4</p>
+        </div>
+    </did>
+    <did class="has-col-sm-all has-col-lg-2">
+        <div class="example--item">
+            <p>5</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>6</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>7</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>8</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>9</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>10</p>
+        </div>
+    </did>
+</div>
+                    </script></code></pre>
+                </div>
+
+                <div class="example">
+                    <h2 id="has-row-class">
+                        <code>.has-row-{breakpoint}-{number of rows}</code> class
+                        <span class="alert">/!\ No fallback</span>
+                    </h2>
+                    <p>The number of row of a grid item can be changed using the class
+                        <code>.has-row-{breakpoint}-{number of columns}</code>.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>{breakpoint}</strong>: optional breakpoint (See breakpoints) to change the number of rows. of
+                            the item from a breakpoint</li>
+                        <li>
+                            <strong>{number of row}</strong>: Depend on your layout and the number of rows you end up with, But you
+                            can set a number of rows using
+                            <code>grid-template-rows</code>. The word all can be used the item will be full width in this case
+                            only if the number of rows is set.</li>
+                    </ul>
+                    <div class="grid has-grid-gap-2 has-cols-5">
+                        <did class="has-row-4">
+                            <div class="example--item">
+                                <p>1</p>
+                            </div>
+                        </did>
+                        <did class="has-row-2">
+                            <div class="example--item">
+                                <p>2</p>
+                            </div>
+                        </did>
+                        <did class="has-row-3">
+                            <div class="example--item">
+                                <p>3</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>4</p>
+                            </div>
+                        </did>
+                        <did class="has-row-3">
+                            <div class="example--item">
+                                <p>5</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>6</p>
+                            </div>
+                        </did>
+                        <did class="has-row-2">
+                            <div class="example--item">
+                                <p>7</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>8</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>9</p>
+                            </div>
+                        </did>
+                        <did>
+                            <div class="example--item">
+                                <p>10</p>
+                            </div>
+                        </did>
+                    </div>
+                    <pre><code class="language-markup"><script type="prism-html-markup">
+<div class="grid has-grid-gap-2 has-cols-5">
+    <did class="has-row-4">
+        <div class="example--item">
+            <p>1</p>
+        </div>
+    </did>
+    <did class="has-row-2">
+        <div class="example--item">
+            <p>2</p>
+        </div>
+    </did>
+    <did class="has-row-3">
+        <div class="example--item">
+            <p>3</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>4</p>
+        </div>
+    </did>
+    <did class="has-row-3">
+        <div class="example--item">
+            <p>5</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>6</p>
+        </div>
+    </did>
+    <did class="has-row-2">
+        <div class="example--item">
+            <p>7</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>8</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>9</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>10</p>
+        </div>
+    </did>
+</div>
+                    </script></code></pre>
+                </div>
+
+                <div class="example">
+                    <h2 id="is-dense-class">
+                        <code>.is-dense</code> class
+                        <span class="alert">/!\ No fallback</span>
+                    </h2>
+                    <p>
+                        <code>.is-dense</code> with
+                        <code>.grid</code> will make the grid dense.</p>
+
+                    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow">Dense: Is a keyword specifying that the auto-placement algorithm uses a “dense” packing algorithm, which attempts
+                        to fill in holes earlier in the grid, if smaller items come up later. This may cause items to appear
+                        out-of-order, when doing so would fill in holes left by larger items.</blockquote>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow">https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow</a>
+
+                        <p>For example, here is the example from .has-col-{breakpoint}-{number of columns} if .is-dense:</p>
+
+                        <div class="grid is-dense has-grid-gap-2  has-cols-5">
+                            <did class="has-col-2 has-col-md-3 has-col-lg-all">
+                                <div class="example--item">
+                                    <p>1</p>
+                                </div>
+                            </did>
+                            <did class="has-col-2 has-col-md-1 has-col-lg-2">
+                                <div class="example--item">
+                                    <p>2</p>
+                                </div>
+                            </did>
+                            <did class="has-col-xl-2">
+                                <div class="example--item">
+                                    <p>3</p>
+                                </div>
+                            </did>
+                            <did class="has-col-md-2 has-col-lg-4">
+                                <div class="example--item">
+                                    <p>4</p>
+                                </div>
+                            </did>
+                            <did class="has-col-sm-all has-col-lg-2">
+                                <div class="example--item">
+                                    <p>5</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>6</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>7</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>8</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>9</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>10</p>
+                                </div>
+                            </did>
+                        </div>
+
+                        <pre><code class="language-markup"><script type="prism-html-markup">
+<div class="grid is-dense has-grid-gap-2  has-cols-5">
+    <did class="has-col-2 has-col-md-3 has-col-lg-all">
+        <div class="example--item">
+            <p>1</p>
+        </div>
+    </did>
+    <did class="has-col-2 has-col-md-1 has-col-lg-2">
+        <div class="example--item">
+            <p>2</p>
+        </div>
+    </did>
+    <did class="has-col-xl-2">
+        <div class="example--item">
+            <p>3</p>
+        </div>
+    </did>
+    <did class="has-col-md-2 has-col-lg-4">
+        <div class="example--item">
+            <p>4</p>
+        </div>
+    </did>
+    <did class="has-col-sm-all has-col-lg-2">
+        <div class="example--item">
+            <p>5</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>6</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>7</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>8</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>9</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>10</p>
+        </div>
+    </did>
+</div>
+                    </script></code></pre>
+                </div>
+
+                <div class="example">
+                    <h2 id="container-class"><code>.container</code> Class</h2>
+                    <p>Atomic Bulldog grid comes with a container class to get even spacing in your project. This all page is in a container.</p>
+                </div>
+
+                <div class="example">
+                    <h2 id="configure-your-grid-with-scss">Configure your grid with SCSS</h2>
+                    <p>Atomic Bulldog Grid is fully customizable:</p>
+                    <ul>
+                        <li><strong>CSS variables</strong>: By default, the grid comes with CSS custom properties, and the fallback CSS not.<br>
+                        <code>$use-css-var</code> can be changed to suit you need in <span class="highlight">atomic-bulldog-grid.scss</span>, <span class="highlight">atomic-bulldog-grid-fallback.scss</span>, <span class="highlight">atomic-bulldog-grid-fallback-ie.scss</span>.</li>
+                        <li><strong>Breakpoints</strong>: The map <code>$breakpoints</code> manage all the breakpoints in the project you can add, remove, rename so this grid can fit your needs.</li>
+                        <li><strong>Number of Columns</strong>: Change <code>$grid-columns</code> to the maximum of columns you need.</li>
+                        <li><strong>Spacers</strong>: The map <code>$spacers</code> manage all the spacing in the project you can add, remove, rename so this grid can fit your needs.</li>
+                        <li><strong>Container sizes</strong>:  The map <code>$container-sizes</code> manage all the container sizes, it is linked to the <code>$breakpoints</code> map if you edit this one remember to change the container map as well.</li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+    </body>
+
+</html>

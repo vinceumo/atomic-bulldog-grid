@@ -1,0 +1,15 @@
+// ------------------------------
+// Sass Variables
+// ------------------------------
+$grid-columns: 12;
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// Grid
+//
+// This project use by default CSS grid layout `display: grid` for its grid with a fallback on flexbox for older browsers.
+// `$grid-columns` allow setting the number of columns we want per grid.
+//
+// Styleguide Variables.grid

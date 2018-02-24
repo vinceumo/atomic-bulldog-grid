@@ -1,0 +1,74 @@
+// ------------------------------
+// Sass Variables
+// ------------------------------
+$bp-prefix: --bp-;
+$breakpoints: (
+  xs: 320px, // Smartphone
+  sm: 600px, // Tablets
+  md: 900px, // Tablets Landscape and small desktops
+  lg: 1200px, // Desktops
+  xl: 1800px, // Large Desktop
+);
+
+// ------------------------------
+// Set bp function
+// ------------------------------
+//Can't use CSS variables in media queries the bp var only print the value the bp-var function will print the variable
+@function bp($bp) {
+  @return em(map-get($breakpoints, $bp));
+}
+
+@function bp-var($bp, $true-val:false) {
+  @if $use-css-var == true {
+    @if $true-val == true {
+      @return map-get($breakpoints, $bp); //True Val
+    } @else {
+      @return var(#{$bp-prefix}#{$bp}); //CSS Var
+    }
+  } @else {
+    @return map-get($breakpoints, $bp); //Disabled CSS Var
+  }
+}
+
+// ------------------------------
+// Set root variables
+// ------------------------------
+@if $use-css-var == true {
+  #{$root-default} {
+    @each $name, $bp in $breakpoints {
+      #{$bp-prefix}#{$name}: $bp; //Not using em as not being use in media queries
+    }
+  }
+}
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// Breakpoints
+//
+// Breakpoints are in the map `$breakpoints`
+//
+// ---------------
+// * `xs`: 320px, // Smartphone
+// * `sm`: 600px, // Tablets
+// * `md`: 900px, // Tablets Landscape and small desktops
+// * `lg`: 1200px, // Desktops
+// * `xl`: 1800px, // Large Desktop
+// ---------------
+//
+// Breakpoints can be called in the sass project using the functions:
+//
+// `bp($bp)` which will output a value in em
+//
+// `bp-var($bp, $true-val:false)` which will output the CSS variable
+//
+// Usage of bp():
+// * `bp(sm);` => `36em`
+//
+// Usage of bp-var():
+// * `bp-var(sm);` => `var(--bp-sm);` If $use-css-var = true
+// * `bp-var(sm);` => `576px;` If $use-css-var = false
+// * `bp-var(sm, true)` => `576px;`
+//
+// Styleguide Variables.breakpoints

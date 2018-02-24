@@ -1,0 +1,18 @@
+//Global settings
+$use-css-var: false;
+
+//functions
+@import "functions/em";
+@import "functions/map-deep-get";
+
+//mixins
+@import "mixins/media-queries";
+
+//variables
+@import "variables/root-classes";
+@import "variables/breakpoints";
+@import "variables/grid";
+@import "variables/spacers";
+
+//layout
+@import "layouts/grid-fallback-ie";

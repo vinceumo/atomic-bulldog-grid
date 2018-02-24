@@ -1,0 +1,98 @@
+/* Progressive Enhancement for browsers not supporting grid except IE */
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+@supports not (display: grid) {
+  @supports (display: flex) {
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-right: (spacer(1, true) * -1) / 2;
+      margin-left: (spacer(1, true) * -1) / 2;
+
+      & > * {
+        flex: 0 0 percentage(1 / $grid-columns);
+        max-width: percentage(1 / $grid-columns);
+        min-height: 1px;
+        padding-right: spacer(1, true) / 2;
+        padding-left: spacer(1, true) / 2;
+        margin-bottom: spacer(1, true);
+      }
+
+      @each $key, $spacer in $spacers {
+        &.has-grid-gap-#{$key} {
+          margin-right: (spacer($key, true) * -1) / 2;
+          margin-left: (spacer($key, true) * -1) / 2;
+
+          & > * {
+            padding-right: spacer($key, true) / 2;
+            padding-left: spacer($key, true) / 2;
+            margin-bottom: spacer($key, true);
+          }
+        }
+      }
+
+      @for $i from 1 through $grid-columns {
+        &.has-cols-#{$i} {
+          & > * {
+            flex: 0 0 percentage(1 / $i);
+            max-width: percentage(1 / $i);
+          }
+        }
+      }
+
+      @each $bp, $bpKey in $breakpoints {
+        @include min(#{bp(#{$bp})}) {
+          @each $key, $spacer in $spacers {
+            &.has-grid-gap-#{$bp}-#{$key} {
+              margin-right: (spacer($key, true) * -1) / 2;
+              margin-left: (spacer($key, true) * -1) / 2;
+
+              & > * {
+                padding-right: spacer($key, true) / 2;
+                padding-left: spacer($key, true) / 2;
+                margin-bottom: spacer($key, true);
+              }
+            }
+          }
+
+          @for $i from 1 through $grid-columns {
+            &.has-cols-#{$bp}-#{$i} {
+              & > * {
+                flex: 0 0 percentage(1 / $i);
+                max-width: percentage(1 / $i);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// Grid Fallback
+//
+// Atomic Bulldog grid use progressive enhancement for browsers not supporting CSS grid layout. It will use an alternative grid base on flexbox. Not all classes are supported.
+//
+// This grid will compile in screen-fallback.css
+//
+// For now the fallback grid only works with the following classes:
+// * `.grid`
+// * `.has-cols-{bp}-{num-of-col}`
+// * `.has-grid-gap-{num}`
+//
+//
+// Try to see this page on IE: 11.
+//
+// <p class="ciu_embed" data-feature="flexbox" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false">
+//   <a href="http://caniuse.com/#feat=flexbox">Can I Use flexbox?</a> Data on support for the flexbox feature across the major browsers from caniuse.com.
+// </p>
+//
+// Styleguide Layout.Grid.z

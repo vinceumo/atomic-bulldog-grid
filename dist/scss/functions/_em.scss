@@ -1,0 +1,28 @@
+// Used for "min" and "max" media query mixins
+@function em($size, $context: 16) {
+  @return (($size/ 1px) / $context) + 0em;
+}
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// em($size, $context: 16)
+//
+// The em function converts px value into an em value. By default, the function uses the base 16px.
+// This function is used to set the media queries with em value.
+// Resources:
+// - https://css-tricks.com/em-based-media-queries-are-based-on/
+// - https://zellwk.com/blog/media-query-units/
+//
+// Parameters:
+// * `$size` - Size in px to be converted in em
+// * `$context` - Optional value. By default $context is equal to 16 as this function is mostly use for media queries
+//
+// Usage:
+// * `em(400px);`
+// 
+// Output:
+// * `25em;`
+//
+// Styleguide Functions.em

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+$dark-blue: #2c303a;
+$blue: #3494e6;
+$pink: #ec6ead;
+$white: #ffffff;
+
+
+html{
+  font-size: 20px;
+}
+
+body {
+  background-color: $dark-blue;
+  color: $white;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+:not(pre)>code[class*=language-],
+pre[class*=language-] {
+  background-color: transparentize($white, 0.85);
+  border-radius: 5px;
+}
+
+code,
+span.highlight {
+  background-color: transparentize($white, 0.85);
+}
+
+span.alert{
+  background-color: transparentize($pink, 0.42);
+}
+
+header {
+  color: $white;
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+
+  & > .grid{
+    margin-top: 3rem;
+  }
+
+  .sub-example{
+    .example--item{
+      background: transparentize($white, 0.4);
+      color: $dark-blue;
+    }
+  }
+}
+
+.example--item {
+  background: linear-gradient(45deg, $blue, $pink );
+  padding: 1rem; 
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  &.is-sticky{
+    height: auto;
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+.example{
+  margin-bottom: 8rem;
+  .grid{
+    margin-bottom: 1rem;
+  }
+}
+
+blockquote{
+  margin: 0;
+  background-color: transparentize($white, 0.7);
+  padding: 1rem;
+  border-left: 0.5rem solid $blue;
+}
+
+a { //[href*="//"]
+  color: $white;
+  border-bottom: 3px solid $blue;
+  box-shadow: inset 0 -5px 0 $blue;
+  transition: background .3s ease-in-out;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    background: $blue;
+  }
+}
+
+ul{
+  li{
+    margin-bottom: 0.5rem;
+  }
+}
