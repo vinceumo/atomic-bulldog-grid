@@ -935,7 +935,8 @@
 
                 <div class="example">
                     <h2>
-                        <code>.has-col-{breakpoint}-{number of columns}</code> class <span class="alert">/!\ No fallback</span>
+                        <code>.has-col-{breakpoint}-{number of columns}</code> class
+                        <span class="alert">/!\ No fallback</span>
                     </h2>
                     <p>The number of columns of a grid item can be change using the class
                         <code>.has-col-{breakpoint}-{number of columns}</code>
@@ -945,7 +946,8 @@
                             <strong>{breakpoint}</strong>: optional breakpoint (See breakpoints) to change the number of columns
                             of the item from a breakpoint</li>
                         <li>
-                            <strong>{number of columns}</strong>: From 0 to 12($grid-columns) the word all can be used, the item will be full width in this case</li>
+                            <strong>{number of columns}</strong>: From 0 to 12($grid-columns) the word all can be used, the item
+                            will be full width in this case</li>
                     </ul>
 
                     <div class="grid  has-grid-gap-2  has-cols-5">
@@ -1059,17 +1061,21 @@
 
                 <div class="example">
                     <h2>
-                        <code>.has-row-{breakpoint}-{number of rows}</code> class <span class="alert">/!\ No fallback</span>
+                        <code>.has-row-{breakpoint}-{number of rows}</code> class
+                        <span class="alert">/!\ No fallback</span>
                     </h2>
                     <p>The number of row of a grid item can be change using the class
                         <code>.has-row-{breakpoint}-{number of columns}</code>.
                     </p>
                     <ul>
                         <li>
-                            <strong>{breakpoint}</strong>: optional breakpoint (See breakpoints) to change the number of rows.
-                            of the item from a breakpoint</li>
+                            <strong>{breakpoint}</strong>: optional breakpoint (See breakpoints) to change the number of rows. of
+                            the item from a breakpoint</li>
                         <li>
-                            <strong>{number of row}</strong>: Depend of your layout and the number of row you end up with, But you can set a number of row using <code>grid-template-rows</code>. The word all can be used the item will be full width in this case only if the number of row is set.</li>
+                            <strong>{number of row}</strong>: Depend of your layout and the number of row you end up with, But you
+                            can set a number of row using
+                            <code>grid-template-rows</code>. The word all can be used the item will be full width in this case
+                            only if the number of row is set.</li>
                     </ul>
                     <div class="grid has-grid-gap-2 has-cols-5">
                         <did class="has-row-4">
@@ -1156,6 +1162,131 @@
         </div>
     </did>
     <did class="has-row-2">
+        <div class="example--item">
+            <p>7</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>8</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>9</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>10</p>
+        </div>
+    </did>
+</div>
+                    </script></code></pre>
+                </div>
+
+                <div class="example">
+                    <h2>
+                        <code>.is-dense</code> class
+                        <span class="alert">/!\ No fallback</span>
+                    </h2>
+                    <p>
+                        <code>.is-dense</code> with
+                        <code>.grid</code> will make the grid dense.</p>
+
+                    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow">Is a keyword specifying that the auto-placement algorithm uses a “dense” packing algorithm, which attempts
+                        to fill in holes earlier in the grid, if smaller items come up later. This may cause items to appear
+                        out-of-order, when doing so would fill in holes left by larger items.</blockquote>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow">https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow</a>
+
+                        <p>For example here is the example from .has-col-{breakpoint}-{number of columns} if .is-dense:</p>
+
+                        <div class="grid is-dense has-grid-gap-2  has-cols-5">
+                            <did class="has-col-2 has-col-md-3 has-col-lg-all">
+                                <div class="example--item">
+                                    <p>1</p>
+                                </div>
+                            </did>
+                            <did class="has-col-2 has-col-md-1 has-col-lg-2">
+                                <div class="example--item">
+                                    <p>2</p>
+                                </div>
+                            </did>
+                            <did class="has-col-xl-2">
+                                <div class="example--item">
+                                    <p>3</p>
+                                </div>
+                            </did>
+                            <did class="has-col-md-2 has-col-lg-4">
+                                <div class="example--item">
+                                    <p>4</p>
+                                </div>
+                            </did>
+                            <did class="has-col-sm-all has-col-lg-2">
+                                <div class="example--item">
+                                    <p>5</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>6</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>7</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>8</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>9</p>
+                                </div>
+                            </did>
+                            <did>
+                                <div class="example--item">
+                                    <p>10</p>
+                                </div>
+                            </did>
+                        </div>
+
+                        <pre><code class="language-markup"><script type="prism-html-markup">
+<div class="grid is-dense has-grid-gap-2  has-cols-5">
+    <did class="has-col-2 has-col-md-3 has-col-lg-all">
+        <div class="example--item">
+            <p>1</p>
+        </div>
+    </did>
+    <did class="has-col-2 has-col-md-1 has-col-lg-2">
+        <div class="example--item">
+            <p>2</p>
+        </div>
+    </did>
+    <did class="has-col-xl-2">
+        <div class="example--item">
+            <p>3</p>
+        </div>
+    </did>
+    <did class="has-col-md-2 has-col-lg-4">
+        <div class="example--item">
+            <p>4</p>
+        </div>
+    </did>
+    <did class="has-col-sm-all has-col-lg-2">
+        <div class="example--item">
+            <p>5</p>
+        </div>
+    </did>
+    <did>
+        <div class="example--item">
+            <p>6</p>
+        </div>
+    </did>
+    <did>
         <div class="example--item">
             <p>7</p>
         </div>
