@@ -6,4 +6,3 @@ http://keepachangelog.com/en/1.0.0/
 
 Initial release of Atomic Bulldog Grid
 
-### Added
