@@ -18,7 +18,7 @@
                 <header>
                     <h1>Atomic Bulldog Grid</h1>
                     <p>CSS (SCSS) grid, base on CSS grid layout with @supports fallback to flexbox (partial support)</p>
-                    <a href="https://github.com/vinceumo/atomic-bulldog-grid">Get this project on Github</a>
+                    <a href="https://github.com/vinceumo/atomic-bulldog-grid">Get this project in Github</a>
 
                     <div class="grid has-grid-gap-2 has-cols-4">
                         <div class="has-col-all">
@@ -216,7 +216,7 @@
                 <div class="example">
                     <h2 id="has-cols-class">
                         <code>.has-cols-{breakpoint}-{number of columns}</code> class</h2>
-                    <p>The number of columns of the grid can be change using the class
+                    <p>The number of columns of the grid can be changed using the class
                         <code>.has-cols-{breakpoint}-{number of columns}</code>
                     </p>
                     <ul>
@@ -507,7 +507,7 @@
                 <div class="example">
                     <h2 id="has-grid-gap-class">
                         <code>.has-grid-gap-{breakpoint}-{spacer}</code> class</h2>
-                    <p>The spacing between grid items can be change using the class
+                    <p>The spacing between grid items can be changed using the class
                         <code>.has-cols-{breakpoint}-{number of columns}</code>
                     </p>
                     <ul>
@@ -953,7 +953,7 @@
                         <code>.has-col-{breakpoint}-{number of columns}</code> class
                         <span class="alert">/!\ No fallback</span>
                     </h2>
-                    <p>The number of columns of a grid item can be change using the class
+                    <p>The number of columns of a grid item can be changed using the class
                         <code>.has-col-{breakpoint}-{number of columns}</code>
                     </p>
                     <ul>
@@ -1079,7 +1079,7 @@
                         <code>.has-row-{breakpoint}-{number of rows}</code> class
                         <span class="alert">/!\ No fallback</span>
                     </h2>
-                    <p>The number of row of a grid item can be change using the class
+                    <p>The number of row of a grid item can be changed using the class
                         <code>.has-row-{breakpoint}-{number of columns}</code>.
                     </p>
                     <ul>
@@ -1087,10 +1087,10 @@
                             <strong>{breakpoint}</strong>: optional breakpoint (See breakpoints) to change the number of rows. of
                             the item from a breakpoint</li>
                         <li>
-                            <strong>{number of row}</strong>: Depend of your layout and the number of row you end up with, But you
-                            can set a number of row using
+                            <strong>{number of row}</strong>: Depend on your layout and the number of rows you end up with, But you
+                            can set a number of rows using
                             <code>grid-template-rows</code>. The word all can be used the item will be full width in this case
-                            only if the number of row is set.</li>
+                            only if the number of rows is set.</li>
                     </ul>
                     <div class="grid has-grid-gap-2 has-cols-5">
                         <did class="has-row-4">
@@ -1214,7 +1214,7 @@
                         out-of-order, when doing so would fill in holes left by larger items.</blockquote>
                         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow">https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow</a>
 
-                        <p>For example here is the example from .has-col-{breakpoint}-{number of columns} if .is-dense:</p>
+                        <p>For example, here is the example from .has-col-{breakpoint}-{number of columns} if .is-dense:</p>
 
                         <div class="grid is-dense has-grid-gap-2  has-cols-5">
                             <did class="has-col-2 has-col-md-3 has-col-lg-all">
@@ -1332,14 +1332,14 @@
 
                 <div class="example">
                     <h2 id="configure-your-grid-with-scss">Configure your grid with SCSS</h2>
-                    <p>Atomic Bulldog Grid is fully customable:</p>
+                    <p>Atomic Bulldog Grid is fully customizable:</p>
                     <ul>
-                        <li><strong>CSS variables</strong>: By default the grid comes with CSS custom properties, and the fallback css not.<br>
-                        <code>$use-css-var</code> can be change to suit you need in <span class="highlight">atomic-bulldog-grid.scss</span>, <span class="highlight">atomic-bulldog-grid-fallback.scss</span>, <span class="highlight">atomic-bulldog-grid-fallback-ie.scss</span>.</li>
+                        <li><strong>CSS variables</strong>: By default, the grid comes with CSS custom properties, and the fallback CSS not.<br>
+                        <code>$use-css-var</code> can be changed to suit you need in <span class="highlight">atomic-bulldog-grid.scss</span>, <span class="highlight">atomic-bulldog-grid-fallback.scss</span>, <span class="highlight">atomic-bulldog-grid-fallback-ie.scss</span>.</li>
                         <li><strong>Breakpoints</strong>: The map <code>$breakpoints</code> manage all the breakpoints in the project you can add, remove, rename so this grid can fit your needs.</li>
                         <li><strong>Number of Columns</strong>: Change <code>$grid-columns</code> to the maximum of columns you need.</li>
                         <li><strong>Spacers</strong>: The map <code>$spacers</code> manage all the spacing in the project you can add, remove, rename so this grid can fit your needs.</li>
-                        <li><strong>Container sizes</strong>:  The map <code>$container-sizes</code> manage all the container sizes, it is link to the <code>$breakpoints</code> map if you edit this one remember to change the container map as well.</li>
+                        <li><strong>Container sizes</strong>:  The map <code>$container-sizes</code> manage all the container sizes, it is linked to the <code>$breakpoints</code> map if you edit this one remember to change the container map as well.</li>
                     </ul>
                 </div>
 
