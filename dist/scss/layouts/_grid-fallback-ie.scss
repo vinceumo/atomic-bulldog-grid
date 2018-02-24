@@ -1,0 +1,80 @@
+/* Progressive Enhancement for browsers not supporting grid except IE */
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+/* IE10 and 11 Fallback to be remove when < 1%*/
+@media screen and (-ms-high-contrast: active),
+  screen and (-ms-high-contrast: none) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: (spacer(1, true) * -1) / 2;
+    margin-left: (spacer(1, true) * -1) / 2;
+
+    & > * {
+      flex: 0 0 percentage(1 / $grid-columns);
+      max-width: percentage(1 / $grid-columns);
+      min-height: 1px;
+      padding-right: spacer(1, true) / 2;
+      padding-left: spacer(1, true) / 2;
+      margin-bottom: spacer(1, true);
+    }
+
+    @each $key, $spacer in $spacers {
+      &.has-grid-gap-#{$key} {
+        margin-right: (spacer($key, true) * -1) / 2;
+        margin-left: (spacer($key, true) * -1) / 2;
+
+        & > * {
+          padding-right: spacer($key, true) / 2;
+          padding-left: spacer($key, true) / 2;
+          margin-bottom: spacer($key, true);
+        }
+      }
+    }
+
+    @for $i from 1 through $grid-columns {
+      &.has-cols-#{$i} {
+        & > * {
+          flex: 0 0 percentage(1 / $i);
+          max-width: percentage(1 / $i);
+        }
+      }
+    }
+
+    @each $bp, $bpKey in $breakpoints {
+      @include min(#{bp(#{$bp})}) {
+        @each $key, $spacer in $spacers {
+          &.has-grid-gap-#{$bp}-#{$key} {
+            margin-right: (spacer($key, true) * -1) / 2;
+            margin-left: (spacer($key, true) * -1) / 2;
+
+            & > * {
+              padding-right: spacer($key, true) / 2;
+              padding-left: spacer($key, true) / 2;
+              margin-bottom: spacer($key, true);
+            }
+          }
+        }
+
+        @for $i from 1 through $grid-columns {
+          &.has-cols-#{$bp}-#{$i} {
+            & > * {
+              flex: 0 0 percentage(1 / $i);
+              max-width: percentage(1 / $i);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------
+// KSS Documentation
+// ------------------------------
+
+// Doc in _grid-fallback.scss
