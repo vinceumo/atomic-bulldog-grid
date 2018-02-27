@@ -4,7 +4,7 @@
 <img src="https://image.ibb.co/mmS6Hc/Artboard_1.png" alt="Atomic Bulldog Logo">
 </p>
 
-CSS (SCSS) grid, base on CSS grid layout with @supports fallback to flexbox (partial support).
+CSS (SCSS) grid, based on CSS grid layout with @supports fallback to flexbox (partial support).
 
 [**Grid Demo**](https://vinceumo.github.io/atomic-bulldog-grid/)
 
